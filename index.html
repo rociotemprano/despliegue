@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Ñam Ñam</title>
+		<link rel="stylesheet" href="css/style.css">
+		<script src="javascript/archivo.js"></script>
+
+
+
+		<!-- Fuentes Iris Grover, para los apartados y el texto del hero image -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+		<!-- 	/* Ledger, para todos los textos*/ -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Ledger&display=swap" rel="stylesheet">
+		<!-- /* Imprima para las pestañas de las recetas*/ -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Imprima&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+			integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+		<!--libreia Aos-->
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+		<!-- Recargar imagenes-->
+		<link rel="preload" as="image" href="Media/hero2.png">
+		<link rel="preload" as="image" href="Media/hero3.png">
+		<link rel="preload" as="image" href="Media/hero4.png">
+		<link rel="preload" as="image" href="Media/persona.png">
+		<link rel="preload" as="image" href="Media/persona1.png">
+		<link rel="preload" as="image" href="Media/persona2.png">
+	</head>
+
+	<body>
+
+
+		<!-- Diseñamos el inicio-->
+		<header id="encabezado">
+			<div class="fondoHero" id="hero1"></div>
+			<div class="fondoHero" id="hero2"></div>
+			<div class="fondoHero" id="hero3"></div>
+			<nav id="navbar">
+				<!--añadimos la imagen del logo -->
+				<a href="index.html">
+					<img src="Media/logo.png" width="239" height="83">
+				</a>
+
+
+				<ul id="menu"><!-- Menú con sus 5 apartados -->
+					<li class="elemento"><a href="#encabezado">Inicio</a></li>
+					<li class="elemento"><a href="#nosotros">Nosotros</a></li>
+					<li class="elemento"><a href="#recetas">Recetario</a>
+						<ul id="submenu">
+							<li class="Elemsub"><a href="#recetas" onclick="marcarPestana('Saludable', 'linkSaludable')"">Saludable</a></li>
+							<li class=" Elemsub"><a href="#recetas" onclick="marcarPestana('rapido','linkrapido')">15 minutos</a></li>
+							<li class="Elemsub"><a href="#recetas"
+									onclick="marcarPestana('Principal','linkPrincipal')">Principal</a></li>
+							<li class="Elemsub"><a href="#recetas"
+									onclick="marcarPestana('postre', 'linkPostre')">Postres</a></li>
+						</ul>
+					</li>
+					<li class="elemento"><a href="#cursos">Cursos</a></li>
+					<li class="elemento"><a href="#contacto">Contacto</a></li>
+				</ul>
+			</nav>
+			<div>
+				<!--Titulos y subtitulo que iran en el inicio-->
+				<h2 id="titulo">Ñam Ñam</h2>
+				<h3 id="subtitulo"> Haz que tus comidas sean más ricas y especiales</h3>
+			</div>
+		</header>
+
+		<section class="fondo" id="nosotros"> <!-- Cada seccion esta separada y diseñada-->
+			<h1 class="seccion">Sobre Nosotros</h1>
+			<div id="contenedorNos">
+				<!-- En esta seccion creamos dos contenedores, una para el texto y otra para imagenes en carrousel-->
+				<div class="colNos">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor volutpat quam, sed
+						dictum quam consequat sed. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+						posuere cubilia curae;
+						Fusce in feugiat sapien. Quisque id cursus massa.
+						Proin vitae auctor eros, vel aliquam leo. Sed nec nisl semper, ultrices mi in, fermentum tellus.
+						Aliquam aliquam ipsum eget dui malesuada iaculis. Aliquam interdum, lacus eget vulputate
+						dapibus, urna dui venenatis mi, in vehicula quam enim eget elit.
+						Nunc pellentesque nisl lectus, nec placerat augue ultrices eu. In gravida eu lacus ut tincidunt.
+						Vivamus dapibus metus est, non condimentum enim aliquet fermentum.
+					</p>
+				</div>
+				<div class="colNos">
+					<div id="Carrousel" data-aos="flip-right"></div>
+				</div>
+		</section>
+		<section class="fondo" id="video1">
+			<div class="conFilo">
+
+				<video id="video" src="Media/video.mp4" controls muted autoplay data-aos="zoom-in"></video>
+			</div>
+
+		</section>
+		<section class="fondo" id="recetas">
+			<!-- Esta seccion tendra 4 pestañas y mas abajo una caja con 4 platos-->
+			<h1 class="seccion">Recetario</h1>
+			<div id="etiPestanas">
+				<p id="linkSaludble" class="pestanas pestanaActiva"
+					onclick="marcarPestana('Saludable', 'linkSaludable')">Saludable</p>
+				<p id="linkrapido" class="pestanas" onclick="marcarPestana('rapido','linkrapido')"> 15 minutos</p>
+				<p id="linkPrincipal" class="pestanas" onclick="marcarPestana('Principal','linkPrincipal')">Principales
+				</p>
+				<p id="linkPostre" class="pestanas" onclick="marcarPestana('postre', 'linkPostre')">Postres</p>
+			</div>
+
+			<div class="contPestana" id="Saludable">
+				<div class="plato">
+					<div class="imagenPlato">
+						<img src="Media/saludable1.jpg" class="imagenPlato">
+					</div>
+					<p class="nombrePlato">Tosta de aguacate y salmon</p>
+				</div>
+				<div class="plato">
+					<div class="imagenPlato">
+						<img src="Media/saludable2.jpg" class="imagenPlato">
+					</div>
+					<p class="nombrePlato">Ensalada de quinoa y anacardos</p>
+				</div>
+				<div class="plato">
+					<div class="imagenPlato">
+						<img src="Media/saludable3.png" class="imagenPlato">
+					</div>
+					<p class="nombrePlato">Pasta al limon</p>
+				</div>
+				<div class="plato">
+					<div class="imagenPlato">
+						<img src="Media/saludable4.jpg" class="imagenPlato">
+					</div>
+					<p class="nombrePlato">Atún con sésamo</p>
+				</div>
+
+			</div>
+
+
+			<div class="contPestana" id="rapido">
+				<div class="plato">
+					<div class="imagenPlato">
+						<img src="Media/rapido1.png" class="imagenPlato">
+					</div>
+					<p class="nombrePlato">Pollo teriyaki</p>
+				</div>
+				<div class="plato">
+					<div class="imagenPlato">
+						<img src="Media/rapido2.png" class="imagenPlato">
+					</div>
+					<p class="nombrePlato">Cerdo agridulce con tomate</p>
+				</div>
+				<div class="plato">
+					<div class="imagenPlato">
+						<img src="Media/rapido3.png" class="imagenPlato">
+					</div>
+					<p class="nombrePlato">Crema de calabaza y zanahoria</p>
+				</div>
+				<div class="plato">
+					<div class="imagenPlato">
+						<img src="Media/rapido4.png" class="imagenPlato">
+					</div>
+					<p class="nombrePlato">Pulpo a la gallega</p>
+				</div>
+
+			</div>
+
+			<div class="contPestana" id="Principal">
+				<div class="plato">
+					<div class="imagenPlato">
+						<img src="Media/principal1.png" class="imagenPlato">
+					</div>
+					<p class="nombrePlato">Alitas de pollo</p>
+				</div>
+				<div class="plato">
+					<div class="imagenPlato">
+						<img src="Media/principal2.png" class="imagenPlato">
+					</div>
+					<p class="nombrePlato">Pizaa casera de margarita</p>
+				</div>
+				<div class="plato">
+					<div class="imagenPlato">
+						<img src="Media/principal3.png" class="imagenPlato">
+					</div>
+					<p class="nombrePlato">Costillas a la barbacoa</p>
+				</div>
+				<div class="plato">
+					<div class="imagenPlato">
+						<img src="Media/principal4.png" class="imagenPlato">
+					</div>
+					<p class="nombrePlato">Noodles con verduras</p>
+				</div>
+			</div>
+
+			<div class="contPestana" id="postre">
+				<div class="plato">
+					<div class="imagenPlato">
+						<img src="Media/postre1.png" class="imagenPlato">
+					</div>
+					<p class="nombrePlato">Yogurt con granola y frutos rojos</p>
+				</div>
+				<div class="plato">
+					<div class="imagenPlato">
+						<img src="Media/postre2.png" class="imagenPlato">
+					</div>
+					<p class="nombrePlato">Tarta de zanahoria</p>
+				</div>
+				<div class="plato">
+					<div class="imagenPlato">
+						<img src="Media/postre3.png" class="imagenPlato">
+					</div>
+					<p class="nombrePlato">Brownie</p>
+				</div>
+				<div class="plato">
+					<div class="imagenPlato">
+						<img src="Media/postre4.png" class="imagenPlato">
+					</div>
+					<p class="nombrePlato">Tarta de manzana</p>
+				</div>
+
+			</div>
+
+
+		</section>
+
+
+		<section class="fondo" id="cursos">
+			<!-- Galeria de imagenes de cursos que se realizan-->
+			<h1 id="cocina">Cursos de cocina</h1>
+			<div id="contGaleria">
+				<img class="imgGal" src="Media/curso1.jpg">
+				<img class="imgGal" src="Media/curso2.jpg">
+				<img class="imgGal" src="Media/curso3.jpg">
+				<img class="imgGal" src="Media/curso4.jpg">
+				<img class="imgGal" src="Media/curso5.jpg">
+				<img class="imgGal" src="Media/curso6.jpg">
+				<img class="imgGal" src="Media/curso7.jpg">
+				<img class="imgGal" src="Media/curso8.jpg">
+				<img class="imgGal" src="Media/curso9.jpg">
+
+			</div>
+
+
+			<div id="modalLightbox">
+				<div id="imageTopShow">
+
+				</div>
+				<button class="lbButtons lbbRight" onclick="next()">
+					<i class="fas fa-angle-right"></i>
+				</button>
+				<button class="lbButtons lbbLeft" onclick="atras()">
+					<i class="fas fa-angle-left"></i>
+				</button>
+				<button class=" lbbX" onclick="x()">
+					<i>X</i>
+				</button>
+			</div>
+
+
+		</section>
+
+
+		<section class="fondo" id="contacto">
+			<!-- Seccion dividida en dos contenedores en un lado a el formulario creado y en el otro un texto-->
+			<h1 class="seccion">Contacto</h1>
+			<div id="contenedorCont">
+
+				<div class="colCont">
+					<form action="" id="formulario">
+						<input type="text" id="nombre" placeholder="Nombre" required>
+						<input type="email" id="email" placeholder="Email" required>
+						<textarea type="text" id="mensaje" placeholder="Mensaje" required></textarea>
+						<button id="boton" onclick="modalReserva()" value="Enviar">Enviar</button>
+						<!-- Error cuando se rellenan los datos la información no se ve y va a la seccion inicio-->
+					</form>
+
+
+				</div>
+
+				<div class="colCont">
+					<p>Para más informacíon sobre recetas o para apuntarse a nuestros cursos de cocina</p>
+					<p> Contacte con nosotros</p>
+
+				</div>
+				<div id="modalReserva">
+					<div id="modaleBox">
+						<h1> Informacíon enviada</h1>
+						<p id="mensajeCon"></p>
+						<button onclick="cerrar()">Salir</button>
+
+					</div>
+
+
+
+
+				</div>
+		</section>
+		<footer id="pie">
+
+			<div id="diseñado">
+				<p> Diseñado por Rocio Temprano</p>
+			</div>
+			<div id="redes">
+				<img src="Media/instagram.png" class="imga"></a>
+				<img src="Media/facebook.png" class="imga"></a>
+				<img src="Media/gorjeo.png" class="imga"></a>
+			</div>
+		</footer>
+		<script>
+			setInterval(hero, 2500);
+			setInterval(heroIMG, 3000);
+			readyLightbox();
+
+		</script>
+		<!--AOS Libreria-->
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+		<script>
+			AOS.init({
+				easing: 'ease-out-back',
+				duration: 2000
+			});
+		</script>
+	</body>
+
+</html>
